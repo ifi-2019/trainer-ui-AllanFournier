@@ -11,13 +11,12 @@ import org.springframework.web.servlet.ModelAndView;
 public class PokemonTypeController {
 
     private PokemonTypeService pokemonTypeService;
-    // TODO
+
     @GetMapping("/pokedex")
     public ModelAndView pokedex(){
         var modelAndView = new ModelAndView("pokedex");
         modelAndView.addObject("pokemonTypes", pokemonTypeService.listPokemonsTypes());
         return modelAndView;
-        // TODO
     }
 
     @Autowired

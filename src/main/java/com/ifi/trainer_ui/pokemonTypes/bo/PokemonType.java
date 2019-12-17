@@ -2,9 +2,9 @@ package com.ifi.trainer_ui.pokemonTypes.bo;
 
 import java.util.List;
 
-public class PokemonType {
+public class PokemonType implements Comparable {
 
-    private int id;
+    private Integer id;
     private int baseExperience;
     private int height;
     private String name;
@@ -55,7 +55,7 @@ public class PokemonType {
         this.baseExperience = baseExperience;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -77,5 +77,11 @@ public class PokemonType {
 
     public void setSprites(Sprites sprites) {
         this.sprites = sprites;
+    }
+
+    @Override
+    public int compareTo(Object o){
+        PokemonType p = (PokemonType) o;
+        return  getId().compareTo(p.getId());
     }
 }

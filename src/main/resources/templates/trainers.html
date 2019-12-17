@@ -1,28 +1,18 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Pokemon Trainer</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
-</head>
-
 {{> layout/header}}
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <ul class="navbar-nav mr-auto">
         <li class="nav-item">
-            <a class="nav-link" href="pokedex">
+            <a class="nav-link" href="http://localhost:9000/pokedex">
                 <img src="/images/icons/pokeball.png" width="30" height="30" class="d-inline-block align-top" alt="">
                 Pokedex
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="trainers">
+            <a class="nav-link" href="../trainers">
                 <img src="/images/icons/player.png" width="30" height="30" class="d-inline-block align-top" alt="">
                 Trainers
             </a>
@@ -46,37 +36,33 @@
     {{/user}}
 </nav>
 
-<div class="container">
-    <h1 class="pt-md-5 pb-md-5">Pokemon Trainer</h1>
-    <div class="row">
-        <img  src="/images/chen.png" class="col-md-2"/>
+    <div class="container">
+        <h1 class="pt-md-5 pb-md-5">Trainers</h1>
 
-        <div class="row col-md-10">
-
-            <blockquote class="blockquote">
-                Hello there!
-                Welcome to the world of Pokémon!
-                My name is Oak! People call me the Pokémon Prof!
-                This world is inhabited by creatures called Pokémon!
-                For some people, Pokémon are pets. Other use them for fights.
-                Myself… I study Pokémon as a profession. First, what is your name?
-            </blockquote>
-
-            <form action="/registerTrainer" method="post">
-                <div class="form-group">
-                    <label for="trainerName">Trainer name</label>
-                    <input type="text" class="form-control" id="trainerName" name="trainerName" aria-describedby="trainerHelp" placeholder="Enter your name">
-                    <small id="trainerHelp" class="form-text text-muted">This will be your name in the game !</small>
+        <div class="card-deck">
+            {{#trainers}}
+            <div class="col-md-3">
+                <div class="card shadow-sm mb-3">
+                    <div class="card-header">
+                        <h4 class="my-0 font-weight-normal">{{name}}</h4>
+                    </div>
+                    <div class="card-body">
+                        <a class="btn btn-lg btn-block btn-outline-primary" href="/trainers/{{name}}">Team</a>
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            </div>
+            {{/trainers}}
         </div>
 
+
     </div>
-</div>
+
+
+
 
 </body>
 <!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
